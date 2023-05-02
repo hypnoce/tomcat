@@ -182,9 +182,6 @@ public class HttpServletDoHeadBaseTest extends Http2TestBase {
                     j++;
                 }
             }
-
-            // Stream 5 should have one more trace entry
-            Assert.assertEquals("5-EndOfStream", headHeaders[j]);
         } catch (Exception t) {
             System.out.println(debug.toString());
             throw t;

@@ -204,6 +204,9 @@ class StreamProcessor extends AbstractProcessor {
             if (contentLength != -1 && headers.getValue("content-length") == null) {
                 headers.addValue("content-length").setLong(contentLength);
             }
+            if (contentLength == 0 && stream != null) {
+                stream.configureVoidOutputFilter();
+            }
         } else {
             // Disable response body
             if (stream != null) {

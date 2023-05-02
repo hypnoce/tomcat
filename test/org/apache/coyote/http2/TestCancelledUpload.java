@@ -86,7 +86,7 @@ public class TestCancelledUpload extends Http2TestBase {
 
             // Not window update, not reset, must be the headers
             Assert.assertEquals("3-HeadersStart\n" + "3-Header-[:status]-[403]\n" + "3-Header-[content-length]-[0]\n" +
-                    "3-Header-[date]-[Wed, 11 Nov 2015 19:18:42 GMT]\n" + "3-HeadersEnd\n", output.getTrace());
+                    "3-Header-[date]-[Wed, 11 Nov 2015 19:18:42 GMT]\n" + "3-HeadersEnd\n" + "3-EndOfStream\n", output.getTrace());
             output.clearTrace();
             parser.readFrame();
 

@@ -106,8 +106,6 @@ public class TestHttp2Section_6_9 extends Http2TestBase {
         sendEmptyGetRequest(17);
         // Headers
         parser.readFrame();
-        // Body
-        parser.readFrame();
 
         // Release Stream 15 which is waiting for a single byte.
         sendWindowUpdate(0, 1024);

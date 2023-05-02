@@ -589,10 +589,12 @@ public abstract class Http2TestBase extends TomcatBaseTest {
         result.append("]\n");
         result.append(streamId);
         result.append("-HeadersEnd\n");
-        result.append(streamId);
-        result.append("-Body-");
-        result.append(body);
-        result.append("\n");
+        if (!"0".equals(cl)) {
+            result.append(streamId);
+            result.append("-Body-");
+            result.append(body);
+            result.append("\n");
+        }
         result.append(streamId);
         result.append("-EndOfStream\n");
 
